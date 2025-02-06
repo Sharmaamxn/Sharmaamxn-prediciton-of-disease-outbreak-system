@@ -1,0 +1,10 @@
+os
+pickle
+streamlit
+streamlit-option-menu
+numpy
+pandas
+scikit-learn
+imbalanced-learn
+matplotlib
+seaborn
