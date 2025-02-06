@@ -61,7 +61,7 @@ pip install -r requirements.txt
 
 3️⃣ **Run the Streamlit App:**  
 ```bash
-streamlit run frontend/app.py
+streamlit run web.py
 ```  
 
 ## 📜 License  
