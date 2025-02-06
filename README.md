@@ -62,7 +62,10 @@ pip install -r requirements.txt
 3️⃣ **Run the Streamlit App:**  
 ```bash
 streamlit run web.py
-```  
+```
+
+## Live Deployment 🌐  
+👉 [Prediction of Disease Outbreak System](https://prediciton-of-disease-outbreak-system.streamlit.app/)
 
 ## 📜 License  
 This project is open-source and available under the **MIT License**.  
