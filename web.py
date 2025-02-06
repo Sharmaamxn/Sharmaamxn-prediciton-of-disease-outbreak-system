@@ -3,16 +3,27 @@ import pickle    #The pickle module in Python is used for serializing (saving) a
 import streamlit as st    #Streamlit is a Python library used to create interactive web apps for machine learning and data visualization quickly and easily
 from streamlit_option_menu import option_menu    #to create option menu
 
-
 #page modification
 st.set_page_config(page_title='Prediction of Disease Outbreaks',
                    layout='wide',
                    page_icon="👨🏽‍⚕️")
 
+current_dir = os.getcwd()
+
 #importing model
-diabetes_model= pickle.load(open(r"D:\Programming\Project\Predictions\training_models\diabetes_model.sav",'rb'))
-heart_model= pickle.load(open(r"D:\Programming\Project\Predictions\training_models\heart_model.sav",'rb'))
-parkinsons_model= pickle.load(open(r"D:\Programming\Project\Predictions\training_models\parkinsons_model.sav",'rb'))
+diabetes_model_path = os.path.join(current_dir, "training_models", "diabetes_model.sav")
+heart_model_path = os.path.join(current_dir, "training_models", "heart_model.sav")
+parkinsons_model_path = os.path.join(current_dir, "training_models", "parkinsons_model.sav")
+
+# Load the models
+with open(diabetes_model_path, "rb") as model_file:
+    diabetes_model = pickle.load(model_file)
+
+with open(heart_model_path, "rb") as model_file:
+    heart_model = pickle.load(model_file)
+
+with open(parkinsons_model_path, "rb") as model_file:
+    parkinsons_model = pickle.load(model_file)
 
 #designing sidebar menu
 with st.sidebar:
@@ -116,7 +127,7 @@ if selected == "Heart Disease Prediction":
         st.success(heart_disease_diagnosis) #Displays the final prediction message (heart_disease_diagnosis) in a green success message box in Streamlit.    
 
 
-#sidebar input handling of "Heart Disease Prediction"
+#sidebar input handling of "Parkinsons Disease Prediction"
 if selected == "Parkinsons Prediction": 
 
     #des
